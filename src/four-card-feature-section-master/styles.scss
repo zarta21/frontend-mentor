@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+//Colors:
+
+$Red: hsl(0, 78%, 62%);
+$Cyan: hsl(180, 62%, 55%);
+$Orange: hsl(34, 97%, 64%);
+$Blue: hsl(212, 86%, 64%);
+
+$VeryDarkBlue: hsl(234, 12%, 34%);
+$GrayishBlue: hsl(229, 6%, 66%);
+$VeryLightGray: hsl(0, 0%, 98%);
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background: $VeryLightGray;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+
+    h2 {
+        color: $VeryDarkBlue;
+    }
+
+    p {
+        color: $GrayishBlue;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 4em auto;
+        max-width: 1440px;
+        width: 85%;
+        
+        .title {
+            padding: 0;
+            margin-bottom: 2em;
+            text-align: center;
+            h1 {
+                font-size: 1.5rem;
+                font-weight: 200;
+                padding: 0;
+                margin: 0;
+                
+            }
+
+            h2 {
+                margin-top: 0;
+                font-size: 1.5rem;
+            }
+        }
+
+        .content {
+
+            .content-context {
+                position: relative;
+                text-align: left;
+                background-color: #ffffff;
+                border-radius: .5em;
+                padding: 2em;
+                margin-bottom: 1.5em;
+                box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+
+                h2 {
+                    margin: 0;
+                    padding: 0;
+                }
+
+                p {
+                    font-size: 12px;
+                }
+
+                .icon {
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-top: 2em;
+                }
+
+                .supervisor::before,
+                .team-builder::before,
+                .karma::before,
+                .calculator::before {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 4px;
+                }
+
+                .supervisor::before {                    
+                    background: $Cyan;
+                }
+
+                .team-builder::before {
+                    background: $Red;
+                }
+
+                .karma::before {
+                    background: $Orange;
+                }
+
+                .calculator::before {
+                    background: $Blue;
+                }
+            }
+
+            
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .title {
+            width: 40%;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2em;
+            flex: 1;
+
+            .first-element, .content-context:nth-child(3), .middle {
+                width: 25%;
+            }
+        }
+
+    }
+}
